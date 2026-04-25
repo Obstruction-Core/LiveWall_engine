@@ -8,7 +8,7 @@
 ![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-purple.svg)
 
 ## 📖 Table of Contents
-* [⚠️ IMPORTANT!](#-Note)
+* [⚠️ IMPORTANT!](#-note)
 * [✨ Features](#-features)
 * [🖼️ Preview](#%EF%B8%8F-Preview)
 * [📦 Requirements](#-requirements)
