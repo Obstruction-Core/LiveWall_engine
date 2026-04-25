@@ -44,7 +44,6 @@
 | Main Interface | Video Preview |
 | :---: | :---: |
 ![LiveWall Preview](preview.gif) | ![Video Preview](https://via.placeholder.com/400x250?text=Video+Playback+Preview) |
-*Place your actual screenshot URLs here.*
 
 ---
 
