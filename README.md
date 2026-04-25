@@ -14,120 +14,125 @@
 * [🚀 Installation](#-installation)
 * [⚙️ Configuration](#%EF%B8%8F-configuration)
 * [🎮 Usage](#-usage)
-* [🔌 Integration](#-integration)
+* [🔌 Integration with illogical-impulse](#-integration-with-illogical-impulse)
 * [🛠️ Troubleshooting](#%EF%B8%8F-troubleshooting)
 * [🤝 Contributing](#-contributing)
 * [📄 License](#-license)
+* [🙏 Acknowledgements](#-acknowledgements)
 
 ---
 
 ## ✨ Features
-
 ### 🎬 Live Preview
-* **Native Playback:** MP4, MKV, and WebM videos play directly inside the GUI using `QtMultimedia`.
-* **Animated GIFs:** Smooth, looped previews powered by `QMovie`.
-* **Static Images:** Intelligent scaling for JPEG, PNG, and WebP while preserving aspect ratio.
+* **Native playback** – MP4, MKV, WebM videos play directly inside the GUI using `QtMultimedia`.
+* **Animated GIFs** – Smooth, looped preview with `QMovie`.
+* **Static images** – JPEG, PNG, WebP, scaled to fit while preserving aspect ratio.
 
 ### 🎨 Material You Theming
-* **9 matugen Color Schemes:** Content, Expressive, Fidelity, Fruit Salad, Monochrome, Neutral, Rainbow, Tonal-Spot, and Vibrant.
-* **Instant Switching:** Apply Dark or Light mode with one click.
-* **True Color Swatches:** Fixed dark/light swap bugs—what you see in the preview is exactly what hits your config.
+* **9 color schemes from matugen** – scheme-content, expressive, fidelity, fruit-salad, monochrome, neutral, rainbow, tonal-spot, and vibrant.
+* **Dark / Light mode** – apply either with one click.
+* **True color preview** – swatches show the exact colors you'll get.
 
 ### 🔄 Safe Revert & UX
-* **Automatic Backups:** Every change creates a backup of your `config.json`.
-* **One-Click Revert:** Instantly restore your previous wallpaper, mode, and scheme.
-* **Interactive Swatches:** Click any color swatch to copy its HEX value to your clipboard.
+* **Automatic backup** of `config.json` and previous theme state.
+* **One-click revert** restores your last wallpaper + mode + scheme.
+* **Interactive Swatches** – Click any color swatch to copy its HEX value to clipboard.
 
 ---
 
 ## 🖼️ Screenshots
-| Wallpaper Preview | Theme Selection |
+| Main Interface | Video Preview |
 | :---: | :---: |
-| ![Preview](https://via.placeholder.com/400x250?text=Wallpaper+Preview) | ![Themes](https://via.placeholder.com/400x250?text=Theme+Selection) |
-*Pro tip: Replace these placeholders with your actual screenshots once you upload them to your repo.*
+![LiveWall Preview](preview.gif) | ![Video Preview](https://via.placeholder.com/400x250?text=Video+Playback+Preview) |
+*Place your actual screenshot URLs here.*
 
 ---
 
 ## 📦 Requirements
-
 | Dependency | Purpose | Installation (Arch) |
 | :--- | :--- | :--- |
 | **Python 3.10+** | Script runtime | `sudo pacman -S python` |
 | **PyQt6** | GUI framework | `pip install PyQt6` |
-| **matugen** | Color extraction | AUR (`matugen-bin`) |
-| **ffmpeg** | Video frame extraction | `sudo pacman -S ffmpeg` |
-| **mpvpaper** | Video wallpaper daemon | `sudo pacman -S mpvpaper` |
+| **matugen** | Theme generation | AUR / end-4 dotfiles |
+| **ffmpeg** | Video processing | `sudo pacman -S ffmpeg` |
+| **mpvpaper** | Video wallpaper | `sudo pacman -S mpvpaper` |
 
 ---
 
 ## 🚀 Installation
-
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/yourusername/livewall-engine.git](https://github.com/yourusername/livewall-engine.git)
-   cd livewall-engine
+   git clone [https://github.com/yourusername/LiveWall_engine.git](https://github.com/yourusername/LiveWall_engine.git)
+   cd LiveWall_engine
 
-    Install Python dependencies
+    Install dependencies
     Bash
 
-    pip install --user PyQt6
+    pip install PyQt6
 
-    Make the script executable
+    Run the app
     Bash
 
-    chmod +x livewall_app.py
+    python livewall_app.py
 
 ⚙️ Configuration
 
-The engine integrates with the following config files:
+The engine automatically manages state in your illogical-impulse config folder:
 
-    ~/.config/illogical-impulse/config.json (Active config)
+    ~/.config/illogical-impulse/config.json
 
-    ~/.config/illogical-impulse/config.json.theme.bak (Theme backup)
+    ~/.config/illogical-impulse/config.json.theme.bak (Backups)
 
 🎮 Usage
 
-    Launch the app from your terminal or application launcher.
+    Select a wallpaper – Browse to an image, GIF, or video.
 
-    Select a file (Image/GIF/Video).
+    Watch live preview – Video/GIF plays automatically.
 
-    Pick a Theme from the swatch list.
+    Choose a theme – Click any theme in the list.
 
-    Apply Dark or Light mode to instantly update your system.
+    Pick a mode – Press Apply Dark or Apply Light.
 
-🔌 Integration
+    Revert – If you don’t like the result, click Revert to Last State.
 
-To launch LiveWall Engine directly from the illogical-impulse wallpaper picker, add this code to your WallpaperSelectorContent.qml:
+🔌 Integration with illogical-impulse
+
+To add a launch button inside your WallpaperSelector.qml, insert this code:
 QML
 
 IconToolbarButton {
-    implicitWidth: height
     text: "rocket_launch"
     onClicked: {
         Quickshell.exec(["python3", "/path/to/livewall_app.py"])
         GlobalStates.wallpaperSelectorOpen = false;
     }
-    StyledToolTip {
-        text: "Launch LiveWall Engine"
-    }
 }
 
 🛠️ Troubleshooting
 
-    Video not playing: Ensure GStreamer is set up: sudo pacman -S gst-plugins-good.
+    MP4 preview not playing – Install GStreamer plugins: sudo pacman -S gst-plugins-good.
 
-    matugen issues: Check your $PATH to ensure matugen is reachable.
+    matugen not found – Ensure matugen is in your PATH.
 
-    UI Focus: If keys aren't working, ensure no other Hyprland layers are stealing focus.
+    Revert fail – Check if config.json.theme.prev.bak exists.
 
 🤝 Contributing
 
-Feel free to open issues or submit PRs! I'm specifically looking for help with:
+Contributions are welcome! Please open an issue or pull request for:
 
-    Better GStreamer codec support.
+    Better error handling.
 
-    Packaging for Flatpak.
+    Flatpak packaging.
+
+    Support for more video codecs.
 
 📄 License
 
-Distributed under the MIT License. See LICENSE for more information.
+This project is licensed under the MIT License – see the LICENSE file for details.
+🙏 Acknowledgements
+
+    end-4 – For the incredible illogical-impulse dotfiles and matugen integration.
+
+    matugen – The core color extraction engine.
+
+    Hyprland – For the amazing Wayland experience.
