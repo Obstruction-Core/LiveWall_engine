@@ -1,4 +1,4 @@
-    ```markdown
+
 # 🎨 LiveWall Engine: The Ultimate Material You Companion
 
 **Transform your Hyprland desktop into a living canvas.** LiveWall Engine isn't just a wallpaper picker; it’s a high-performance bridge between your media and the **Material You** ecosystem. Preview 4K videos, animated GIFs, and high-res stills, then instantly inject their DNA into your system colors.
@@ -207,4 +207,3 @@ This project is licensed under the **MIT License**. See the LICENSE file for det
  * **end-4** – For the incredible illogical-impulse dotfiles and inspiration.
  * **matugen** – The core color extraction engine.
  * **Hyprland** – For providing the best Wayland experience.
-```
