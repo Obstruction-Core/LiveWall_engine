@@ -43,7 +43,8 @@
 ## 🖼️ Screenshots
 | Main Interface | Video Preview |
 | :---: | :---: |
-![LiveWall Preview](preview.gif) | ![Video Preview](https://via.placeholder.com/400x250?text=Video+Playback+Preview) |
+<img width="800" height="698" alt="preview" src="https://github.com/user-attachments/assets/a29a26d7-2d87-40f6-be80-d614afd021c4" />
+ 
 
 ---
 
