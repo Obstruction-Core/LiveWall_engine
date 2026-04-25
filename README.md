@@ -42,9 +42,14 @@
 
 ## 🖼️ Preview
 | Video Preview |
+
 | :---: | :---: |
 
- 
+
+https://github.com/user-attachments/assets/62a96268-af3e-4c13-a92c-6ebcac11f7c4
+
+
+
 
 ---
 
