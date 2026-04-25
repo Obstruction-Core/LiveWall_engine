@@ -1,4 +1,4 @@
-```markdown
+
 # 🎨 LiveWall Engine
 
 **Dynamic theme manager for Hyprland** – preview and apply Material You color schemes from any wallpaper: images, GIFs, or MP4 videos.
