@@ -75,8 +75,8 @@ https://github.com/user-attachments/assets/abf49a8d-01a1-431d-8ab5-c668b82f2edc
    git clone [https://github.com/yourusername/LiveWall_engine.git](https://github.com/yourusername/LiveWall_engine.git)
    cd LiveWall_engine
 
-```
- 2. **Install Python dependencies**
+   ```
+2. **Install Python dependencies**
    ```bash
    pip install PyQt6
    
