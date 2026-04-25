@@ -9,7 +9,7 @@
 
 ## 📖 Table of Contents
 * [✨ Features](#-features)
-* [🖼️ Screenshots](#%EF%B8%8F-screenshots)
+* [🖼️ Preview](#%EF%B8%8F-Preview)
 * [📦 Requirements](#-requirements)
 * [🚀 Installation](#-installation)
 * [⚙️ Configuration](#%EF%B8%8F-configuration)
@@ -40,10 +40,10 @@
 
 ---
 
-## 🖼️ Screenshots
-| Main Interface | Video Preview |
+## 🖼️ Preview
+| Video Preview |
 | :---: | :---: |
-<img width="800" height="698" alt="preview" src="https://github.com/user-attachments/assets/a29a26d7-2d87-40f6-be80-d614afd021c4" />
+
  
 
 ---
