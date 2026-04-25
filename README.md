@@ -77,7 +77,7 @@ https://github.com/user-attachments/assets/abf49a8d-01a1-431d-8ab5-c668b82f2edc
    git clone [https://github.com/yourusername/LiveWall_engine.git](https://github.com/yourusername/LiveWall_engine.git)
    cd LiveWall_engine
 
-```
+   ```
  2. **Install Python dependencies**
    ```bash
    pip install PyQt6
@@ -110,7 +110,7 @@ IconToolbarButton {
  * **The Hyprland Community** – For the best tiling window manager experience.
 ## 🌐 External Links
 Explore the ecosystem that makes this project possible:
- * **illogical-impulse Official** – Documentation for the dotfiles.
+ * **https://ii.clsty.link/en/** – Documentation for the dotfiles.
  * **Hyprland Home** – The dynamic tiling Wayland compositor.
  * **InioX GitHub** – Home of Matugen and other incredible tools.
 ## 📄 License
