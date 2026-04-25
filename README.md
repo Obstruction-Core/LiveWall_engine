@@ -8,6 +8,7 @@
 ![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-purple.svg)
 
 ## 📖 Table of Contents
+* [⚠️ IMPORTANT!](#-Note)
 * [✨ Features](#-features)
 * [🖼️ Preview](#%EF%B8%8F-Preview)
 * [📦 Requirements](#-requirements)
@@ -21,6 +22,9 @@
 * [🙏 Acknowledgements](#-acknowledgements)
 
 ---
+
+## Note
+Please acknowledge this, i made this app on the illogical impulse end 4 dotfiles based hyprland, becuase i though this will be one more feature many people may/may not need but if you are using any other wm like niri,kde,gnome please test it and make aure it is stable as i only made this based on quickshell of illogical impulse. I really appreciate you trying out this project🙂
 
 ## ✨ Features
 ### 🎬 Live Preview
