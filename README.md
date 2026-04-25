@@ -1,11 +1,6 @@
 🎨 LiveWall Engine
 
-    Dynamic theme manager for Hyprland – preview and apply Material You color schemes from any wallpaper: images, GIFs, or MP4 videos.
-
-https://img.shields.io/badge/License-MIT-blue.svg
-https://img.shields.io/badge/python-3.10+-blue.svg
-https://img.shields.io/badge/PyQt6-6.6+-green.svg
-https://img.shields.io/badge/Hyprland-Wayland-purple.svg
+Dynamic theme manager for Hyprland – preview and apply Material You color schemes from any wallpaper: images, GIFs, or MP4 videos.
 📖 Table of Contents
 
     ✨ Features
@@ -20,7 +15,7 @@ https://img.shields.io/badge/Hyprland-Wayland-purple.svg
 
     🎮 Usage
 
-    🔌 Integration with illogical‑impulse
+    Plug Integration with illogical-impulse
 
     🛠️ Troubleshooting
 
@@ -28,223 +23,101 @@ https://img.shields.io/badge/Hyprland-Wayland-purple.svg
 
     📄 License
 
-    🙏 Acknowledgements
-
 ✨ Features
 🎬 Live Preview
 
-    Native playback – MP4, MKV, WebM videos play directly inside the GUI using QtMultimedia.
+    Native Playback: MP4, MKV, and WebM videos play directly inside the GUI using QtMultimedia.
 
-    Animated GIFs – smooth, looped preview with QMovie.
+    Animated GIFs: Smooth, looped previews powered by QMovie.
 
-    Static images – JPEG, PNG, WebP, scaled to fit while preserving aspect ratio.
+    Static Images: Intelligent scaling for JPEG, PNG, and WebP while preserving aspect ratio.
 
 🎨 Material You Theming
 
-    9 color schemes from matugen:
+    9 matugen Color Schemes: Content, Expressive, Fidelity, Fruit Salad, Monochrome, Neutral, Rainbow, Tonal-Spot, and Vibrant.
 
-        scheme-content, scheme-expressive, scheme-fidelity
+    Instant Switching: Apply Dark or Light mode with one click.
 
-        scheme-fruit-salad, scheme-monochrome, scheme-neutral
+    True Color Swatches: Fixed dark/light swap bugs—what you see in the preview is exactly what hits your config .
 
-        scheme-rainbow, scheme-tonal-spot, scheme-vibrant
+🔄 Safe Revert & UX
 
-    Dark / Light mode – apply either with one click.
+    Automatic Backups: Every change creates a backup of your config.json.
 
-    True color preview – swatches show the exact colors you'll get (fixed dark/light swap bug).
+    One-Click Revert: Instantly restore your previous wallpaper, mode, and scheme.
 
-🖱️ Interactive Swatches
-
-    Click any color swatch to copy its HEX value to clipboard.
-
-    Primary, secondary, tertiary, and error colors shown for both modes.
-
-🔄 Safe Revert
-
-    Automatic backup of config.json and previous theme state.
-
-    One‑click revert restores your last wallpaper + mode + scheme.
-
-⌨️ Keyboard Shortcuts
-
-    Esc – close the app.
-
-    Full grid navigation (Arrows, Enter) when theme list is focused.
-
-🧩 Seamless Integration
-
-    Launch directly from illogical‑impulse wallpaper picker via a custom button ("Valkyrie Engine").
-
-    Respects your existing matugen and mpvpaper / awww-daemon setup.
+    Interactive Swatches: Click any color swatch to copy its HEX value to your clipboard.
 
 🖼️ Screenshots
-
-    Placeholder – add your own screenshots here
-
-text
-
-[Main window with wallpaper preview, theme list, and color swatches]
-
-https://screenshot.png
+Wallpaper Preview	Theme Selection
+	
+Main window with wallpaper preview, theme list, and color swatches.	
 📦 Requirements
 Dependency	Purpose	Installation (Arch)
 Python 3.10+	Script runtime	sudo pacman -S python
 PyQt6	GUI framework	pip install PyQt6
-matugen	Color extraction & theme generation	AUR / end-4 dotfiles
-ffmpeg	Extract frames from videos	sudo pacman -S ffmpeg
-mpvpaper	Video wallpaper daemon (optional)	sudo pacman -S mpvpaper
-awww-daemon	GIF wallpaper (optional)	sudo pacman -S awww
-Hyprland	Wayland compositor	–
-
-    Note: matugen is part of end-4’s dotfiles. Install it separately or use the included installer.
-
+matugen	Color extraction	AUR (matugen-bin)
+ffmpeg	Video frame extraction	sudo pacman -S ffmpeg
+mpvpaper	Video wallpaper daemon	sudo pacman -S mpvpaper
+Hyprland	Wayland compositor	Native
 🚀 Installation
-1. Clone the repository
-bash
 
-git clone https://github.com/yourusername/livewall-engine.git
-cd livewall-engine
+    Clone the repository
+    Bash
 
-2. Install Python dependencies
-bash
+    git clone https://github.com/yourusername/livewall-engine.git
+    cd livewall-engine
 
-pip install --user PyQt6
+    Install Python dependencies
+    Bash
 
-3. Make the script executable
-bash
+    pip install --user PyQt6
 
-chmod +x livewall_app.py
+    Make the script executable
+    Bash
 
-4. (Optional) Desktop entry
-
-Create ~/.local/share/applications/livewall.desktop:
-ini
-
-[Desktop Entry]
-Name=LiveWall Engine
-Comment=Dynamic theme manager for matugen wallpapers
-Exec=/usr/bin/python3 /absolute/path/to/livewall_app.py
-Icon=/path/to/icon.png
-Terminal=false
-Type=Application
-Categories=Utility;Settings;
-StartupWMClass=LiveWallApp
-
-Then run:
-bash
-
-update-desktop-database ~/.local/share/applications/
+    chmod +x livewall_app.py
 
 ⚙️ Configuration
 
-LiveWall Engine stores its state in:
-text
+The engine integrates with the illogical-impulse environment. It automatically tracks state in:
 
-~/.config/illogical-impulse/config.json          # matugen config
-~/.config/illogical-impulse/config.json.bak      # backup of original config
-~/.config/illogical-impulse/config.json.theme.bak # last applied theme
-~/.config/illogical-impulse/config.json.theme.prev.bak # previous theme (for revert)
+    ~/.config/illogical-impulse/config.json (Active config)
 
-    No manual editing required – the app manages all backups automatically.
+    ~/.config/illogical-impulse/config.json.theme.bak (Theme backup)
 
-🎮 Usage
-Starting the app
+🔌 Integration with illogical-impulse
 
-    From terminal: python3 livewall_app.py
+To launch LiveWall Engine directly from your existing Quickshell wallpaper picker:
 
-    From application launcher: search for “LiveWall Engine”
+    Open WallpaperSelectorContent.qml.
 
-    From illogical‑impulse wallpaper picker: click the Valkyrie Engine button (see Integration).
+    Locate the Row containing extraOptions.
 
-Workflow
+    Add this button to the Toolbar:
 
-    Select a wallpaper – browse to an image, GIF, or video.
+QML
 
-    Watch the live preview – video/GIF plays automatically.
-
-    Choose a theme – click any theme in the list.
-
-    Pick a mode – press Apply Dark or Apply Light.
-
-    Enjoy – your desktop wallpaper and color scheme instantly update.
-
-    Revert – if you don’t like the result, click Revert to Last State.
-
-Tips
-
-    The preview always shows the actual colors that matugen will apply – we fixed the dark/light swap bug.
-
-    Click any swatch to copy its HEX code (great for manual tweaks).
-
-    Videos loop automatically in the preview and on your desktop (via mpvpaper).
-
-🔌 Integration with illogical‑impulse
-
-LiveWall Engine is designed to work seamlessly with end-4’s illogical-impulse dotfiles.
-
-To add a launch button inside the illogical‑impulse wallpaper picker:
-
-    Locate the QML file that defines the picker (e.g., WallpaperSelector.qml).
-
-    Insert this button inside the ColumnLayout:
-
-qml
-
-RippleButton {
-    Layout.fillWidth: true
-    Layout.bottomMargin: 8
-    implicitHeight: 38
-    colBackground: Appearance.colors.colSecondaryContainer
-    colBackgroundHover: Appearance.colors.colSecondaryContainerHover
-
-    contentItem: RowLayout {
-        MaterialSymbol { text: "rocket_launch" }
-        StyledText { text: "Valkyrie Engine"; font.bold: true }
-    }
-
+IconToolbarButton {
+    implicitWidth: height
+    text: "rocket_launch"
     onClicked: {
-        Quickshell.exec(["/usr/bin/python3", "/path/to/livewall_app.py"])
+        Quickshell.exec(["python3", "/path/to/livewall_app.py"])
+        GlobalStates.wallpaperSelectorOpen = false;
+    }
+    StyledToolTip {
+        text: "Launch LiveWall Engine (Valkyrie)"
     }
 }
 
-    Replace /path/to/livewall_app.py with your actual script location.
-
-    Restart Quickshell.
-
-Now you can launch LiveWall Engine directly from the wallpaper picker sidebar.
 🛠️ Troubleshooting
-Issue	Solution
-MP4 preview not playing	Install ffmpeg and gst‑plugins‑good (PyQt6 uses GStreamer). Run sudo pacman -S ffmpeg gst-plugins-good.
-matugen command not found	Make sure matugen is installed and in your PATH (it’s part of end-4’s dotfiles).
-App doesn’t start from .desktop	Use absolute paths in Exec= and Icon=. Add Path=/home/youruser to the .desktop file.
-Wallpaper doesn’t change	Check that mpvpaper (for videos) or awww-daemon (for GIFs) is installed.
-Revert doesn’t restore previous mode	The backup system stores the previous state before each apply – ensure config.json.theme.prev.bak exists.
-Preview shows wrong colors	We already swapped dark/light in the preview – if still wrong, report as issue.
-🤝 Contributing
 
-Contributions are welcome! Please open an issue or pull request.
+    MP4 not playing: Ensure GStreamer plugins are installed: sudo pacman -S gst-plugins-good.
 
-Areas that need help:
+    Path Errors: If launching via .desktop file, use absolute paths for the Exec and Icon fields.
 
-    Better error handling for missing dependencies.
-
-    Support for more video codecs via GStreamer.
-
-    Packaging as Flatpak / AppImage.
-
-    Translations.
+    Weeb Policy: Note that certain directories (like /homework) are hidden unless the weeb policy is enabled in your global config .
 
 📄 License
 
-MIT License – see LICENSE file.
-🙏 Acknowledgements
-
-    end-4 – for the incredible illogical‑impulse dotfiles and matugen integration.
-
-    matugen – the core color extraction engine.
-
-    Qt / PyQt6 – for the beautiful, native widget toolkit.
-
-    Hyprland – the reason we have such a fantastic Wayland experience.
-
-<p align="center">Made with ❤️ for the Hyprland community</p>
+Distributed under the MIT License. See LICENSE for more information.
