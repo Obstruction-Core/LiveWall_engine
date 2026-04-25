@@ -63,7 +63,7 @@ https://github.com/user-attachments/assets/abf49a8d-01a1-431d-8ab5-c668b82f2edc
 | :--- | :--- | :--- |
 | **Python 3.10+** | Script runtime | `sudo pacman -S python` |
 | **PyQt6** | GUI Framework | `pip install PyQt6` |
-| **matugen** | Theme Engine | [InioX/matugen](https://github.com/InioX/matugen) |
+| **matugen** | Theme Engine |           `yay -S matugen` |
 | **ffmpeg** | Media Processing | `sudo pacman -S ffmpeg` |
 | **mpvpaper** | Video Wallpaper | `sudo pacman -S mpvpaper` |
 | **GStreamer** | Preview Backend | `sudo pacman -S gst-plugins-good gst-libav` |
@@ -110,9 +110,9 @@ IconToolbarButton {
  * **The Hyprland Community** – For the best tiling window manager experience.
 ## 🌐 External Links
 Explore the ecosystem that makes this project possible:
- * **https://ii.clsty.link/en/** – Documentation for the dotfiles.
- * **Hyprland Home** – The dynamic tiling Wayland compositor.
- * **InioX GitHub** – Home of Matugen and other incredible tools.
+ * **[illogical impulse](https://ii.clsty.link/en/)** – Documentation for the dotfiles.
+ * **[Hyprland Home](https://hypr.land/)** – The dynamic tiling Wayland compositor.
+ * **[InioX GitHub](https://github.com/InioX/matugen)** – Home of Matugen and other incredible tools.
 ## 📄 License
 Distributed under the **MIT License**.
 
