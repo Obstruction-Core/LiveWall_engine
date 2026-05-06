@@ -106,6 +106,7 @@ IconToolbarButton {
  * **Colors Not Applying:** Verify matugen is in your $PATH.
  * **If you face the error** *FileNotFoundError: [Errno 2] No such file or directory: '/home/user/.config/livewall/                livewall.log'* apply this in your terminal to create that folder
  * ```bash
+   mkdir -p ~/.config/livewall
    sudo chown -R $USER:$USER ~/.config/livewall
 ## 🙏 Acknowledgements
  * **end-4** – For the illogical-impulse dotfiles and architectural inspiration.
